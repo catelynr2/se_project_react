@@ -17,20 +17,23 @@ const Header = ({ onCreateModal }) => {
             alt="logo"
           />
         </div>
-        <div>{currentDate},</div>
-        <div>Florida</div>
+        <div className="header__date-location">{currentDate}, Florida</div>
       </div>
-      <div className="header__avatar">
+      <div className="header__menu-right">
         <div>
-          <button type="text" onClick={onCreateModal}>
+          <button
+            className="header__add-button"
+            type="text"
+            onClick={onCreateModal}
+          >
             + Add New Clothes
           </button>
         </div>
-        <div>Catelyn Richard</div>
-        <div>
+        <div className="header__name">Catelyn Richard</div>
+        <div className="header__avatar">
           <img
             src={require("../images/Avatar.svg").default}
-            className=""
+            className="header__avatar"
             alt="avatar"
           />
         </div>

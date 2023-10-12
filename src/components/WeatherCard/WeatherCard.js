@@ -1,3 +1,5 @@
+import "./WeatherCard.css";
+
 const WeatherOptions = [
   {
     url: require("../images/Day/Cloudy.svg").default,

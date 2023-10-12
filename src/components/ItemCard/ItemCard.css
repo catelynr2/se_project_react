@@ -25,8 +25,9 @@
 
 .card_name {
   position: absolute;
-  top: 18px;
-  right: 140px;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%, 0);
   margin: 0;
   text-align: center;
   padding: 5px;
