@@ -36,3 +36,62 @@ export const defaultClothingItems = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
   },
 ];
+
+export const WeatherOptions = [
+  {
+    url: require("../images/Day/Cloudy.svg").default,
+    day: true,
+    type: "cloudy",
+  },
+  { url: require("../images/Day/Fog.svg").default, day: true, type: "fog" },
+  {
+    url: require("../images/Day/Rain.svg").default,
+    day: true,
+    type: "rain",
+  },
+  {
+    url: require("../images/Day/Snow.svg").default,
+    day: true,
+    type: "snow",
+  },
+  {
+    url: require("../images/Day/Storm.svg").default,
+    day: true,
+    type: "storm",
+  },
+  {
+    url: require("../images/Day/Sunny.svg").default,
+    day: true,
+    type: "sunny",
+  },
+  {
+    url: require("../images/Night/Cloudy.svg").default,
+    day: false,
+    type: "cloudy",
+  },
+  {
+    url: require("../images/Night/Fog.svg").default,
+    day: false,
+    type: "fog",
+  },
+  {
+    url: require("../images/Night/Rain.svg").default,
+    day: false,
+    type: "rain",
+  },
+  {
+    url: require("../images/Night/Snow.svg").default,
+    day: false,
+    type: "snow",
+  },
+  {
+    url: require("../images/Night/Storm.svg").default,
+    day: false,
+    type: "storm",
+  },
+  {
+    url: require("../images/Night/Sunny.svg").default,
+    day: false,
+    type: "sunny",
+  },
+];

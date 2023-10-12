@@ -28,10 +28,12 @@ function App() {
   };
 
   useEffect(() => {
-    getForecastWeather().then((data) => {
-      const temperature = parseWeatherData(data);
-      setTemp(temperature);
-    });
+    getForecastWeather()
+      .then((data) => {
+        const temperature = parseWeatherData(data);
+        setTemp(temperature);
+      })
+      .catch(console.error);
   }, []);
 
   return (
@@ -66,31 +68,40 @@ function App() {
           <p>Select the weather type:</p>
           <div>
             <div>
-              <input
-                className="modal__radio-button"
-                type="radio"
-                id="hot"
-                value="hot"
-              />
-              <label> Hot</label>
+              <label>
+                <input
+                  className="modal__radio-button"
+                  type="radio"
+                  name="weather"
+                  id="hot"
+                  value="hot"
+                />
+                Hot
+              </label>
             </div>
             <div>
-              <input
-                className="modal__radio-button"
-                type="radio"
-                id="warm"
-                value="warm"
-              />
-              <label> Warm</label>
+              <label>
+                <input
+                  className="modal__radio-button"
+                  type="radio"
+                  name="weather"
+                  id="warm"
+                  value="warm"
+                />
+                Warm
+              </label>
             </div>
             <div>
-              <input
-                className="modal__radio-button"
-                type="radio"
-                id="cold"
-                value="cold"
-              />
-              <label> Cold</label>
+              <label>
+                <input
+                  className="modal__radio-button"
+                  type="radio"
+                  name="weather"
+                  id="cold"
+                  value="cold"
+                />
+                Cold
+              </label>
             </div>
           </div>
         </ModalWithForm>
