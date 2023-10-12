@@ -1,0 +1,49 @@
+.card_section {
+  margin-top: 40px;
+}
+
+.card_section-title {
+  margin: 0px;
+  color: #000;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.card_element {
+  position: relative;
+}
+
+.card_image {
+  width: 328px;
+  height: 328px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.card_name {
+  position: absolute;
+  top: 18px;
+  right: 140px;
+  margin: 0;
+  text-align: center;
+  padding: 5px;
+  border-radius: 4px;
+  color: rgba(0, 0, 0, 0.6);
+  background-color: #fff;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.card_items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 17px;
+  margin-top: 34px;
+}
