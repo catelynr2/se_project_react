@@ -1,7 +1,7 @@
 import logo from "../../logo.svg";
 import "./App.css";
 import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
-import CurrentTemperatureUnitContext from "../../../contexts/CurrentTemperatureUnitContext";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
