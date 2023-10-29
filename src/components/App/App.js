@@ -1,11 +1,9 @@
-import logo from "../../logo.svg";
 import "./App.css";
 import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import Profile from "../Profile/Profile";
 import { useEffect, useState } from "react";
 import ItemModal from "../ItemModal/ItemModal";
@@ -14,7 +12,7 @@ import AddItemModal from "../AddItemModal/AddItemModal";
 import { deleteItem, getItems, addItem } from "../../utils/Api";
 
 function App() {
-  const weatherTemp = "75°F";
+  // const weatherTemp = "75°F";
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
@@ -65,15 +63,6 @@ function App() {
   };
 
   useEffect(() => {
-    getForecastWeather()
-      .then((data) => {
-        const temperature = parseWeatherData(data);
-        setTemp(temperature);
-      })
-      .catch(console.error);
-  }, []);
-
-  useEffect(() => {
     getItems()
       .then((data) => {
         setClothingItems(data);
@@ -81,6 +70,15 @@ function App() {
       .catch((error) => {
         console.log(error);
       });
+  }, []);
+
+  useEffect(() => {
+    getForecastWeather()
+      .then((data) => {
+        const temperature = parseWeatherData(data);
+        setTemp(temperature);
+      })
+      .catch(console.error);
   }, []);
 
   useEffect(() => {
