@@ -48,3 +48,17 @@
   gap: 17px;
   margin-top: 34px;
 }
+
+.card__like-btn {
+  position: absolute;
+  top: 30px;
+  right: 110px;
+}
+
+.card__like-btn_visible {
+  visibility: visible;
+}
+
+.card__like-btn_hidden {
+  visibility: hidden;
+}

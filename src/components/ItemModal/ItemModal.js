@@ -1,7 +1,15 @@
 import "./ItemModal.css";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { useContext } from "react";
 
 const ItemModal = ({ selectedCard, onClose, handleDeleteCard }) => {
-  console.log("item modal");
+  const currentUser = useContext(CurrentUserContext);
+  const isOwn = selectedCard.owner === currentUser._id;
+  const deleteButtonClassName = `modal__item-delete-button ${
+    isOwn
+      ? `modal__item-delete-button_visible`
+      : `modal__item-delete-button_hidden`
+  }`;
 
   return (
     <div className={`modal`}>
@@ -13,7 +21,7 @@ const ItemModal = ({ selectedCard, onClose, handleDeleteCard }) => {
         ></button>
         <img
           className="modal__item-img"
-          src={selectedCard.imageUrl}
+          src={selectedCard?.imageUrl || selectedCard?.link}
           alt={selectedCard.name}
         />
         <div className="modal__item-description">
@@ -22,7 +30,7 @@ const ItemModal = ({ selectedCard, onClose, handleDeleteCard }) => {
             weather type: {selectedCard.weather}
           </div>
           <button
-            className="modal__item-delete-button"
+            className={deleteButtonClassName}
             type=" button"
             onClick={() => handleDeleteCard(selectedCard)}
           >

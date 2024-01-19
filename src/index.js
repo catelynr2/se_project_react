@@ -15,7 +15,15 @@ root.render(
 );
 
 // const http = require("http");
-// const server = http.createServer();
+// const server = http.createServer((req, res) => {
+//   console.log(req.url);
+//   console.log(req.method);
+//   console.log(req.headers);
+//   console.log(req.body);
+//   res.write();
+//   res.end( , 'utf8')
+// });
+// server.listen(3000);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

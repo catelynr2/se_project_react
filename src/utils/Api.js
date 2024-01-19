@@ -1,4 +1,7 @@
-const baseUrl = "http://localhost:3001";
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://github.com/catelynr2/se_project_express.git"
+    : "http://localhost:3001";
 
 export const checkResponse = (res) => {
   if (res.ok) {
@@ -20,10 +23,12 @@ export const getItems = () => {
 
 // POST Items
 export const addItem = ({ name, imageUrl, weather }) => {
+  const token = localStorage.getItem("jwt");
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({ name, imageUrl, weather }),
   }).then(checkResponse);
@@ -31,10 +36,36 @@ export const addItem = ({ name, imageUrl, weather }) => {
 
 // DELETE Items
 export const deleteItem = (selectedCard) => {
+  const token = localStorage.getItem("jwt");
   return fetch(`${baseUrl}/items/${selectedCard._id} `, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then(checkResponse);
+};
+
+export const addCardLike = (selectedCard) => {
+  const token = localStorage.getItem("jwt");
+
+  return fetch(`${baseUrl}/items/${selectedCard._id}/likes`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then(checkResponse);
+};
+
+export const removeCardLike = (selectedCard) => {
+  const token = localStorage.getItem("jwt");
+
+  return fetch(`${baseUrl}/items/${selectedCard._id}/likes`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
     },
   }).then(checkResponse);
 };
