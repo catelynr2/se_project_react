@@ -6,6 +6,7 @@ import likeButtonActive from "../../images/likeButton-active.svg";
 
 const ItemCard = ({ item, onSelectCard, onCardLike, loggedIn }) => {
   const currentUser = useContext(CurrentUserContext);
+  console.log(item);
   const isLiked = item?.likes.some((_id) => _id === currentUser?._id);
   const cardLikeButtonClass = `card__like-btn ${
     loggedIn ? "card__like-btn_visible" : "card__like-btn_hidden"

@@ -1,7 +1,13 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import React, { useState, useEffect } from "react";
 
-const LoginModal = ({ handleCloseModal, onLogin, buttonText, isOpen }) => {
+const LoginModal = ({
+  handleCloseModal,
+  onLogin,
+  buttonText,
+  secondaryButtonText,
+  isOpen,
+}) => {
   const [email, setEmail] = useState("");
   const handleEmailInput = (e) => {
     setEmail(e.target.value);
@@ -29,35 +35,34 @@ const LoginModal = ({ handleCloseModal, onLogin, buttonText, isOpen }) => {
       title="Login"
       onClose={handleCloseModal}
       buttonText={buttonText}
+      secondaryButtonText={secondaryButtonText}
       onSubmit={handleSubmit}
     >
-      <div className="modal__form-content">
-        <label>
-          <p className="modal__input-title"> Email</p>
-          <input
-            className="modal__input"
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={email}
-            onChange={handleEmailInput}
-            required
-          />
-        </label>
+      <label className="modal__label">
+        Email
+        <input
+          className="modal__input"
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={email}
+          onChange={handleEmailInput}
+          required
+        />
+      </label>
 
-        <label>
-          <p className="modal__input-title">Password</p>
-          <input
-            className="modal__input"
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={password}
-            onChange={handlePasswordInput}
-            required
-          />
-        </label>
-      </div>
+      <label className="modal__label">
+        Password
+        <input
+          className="modal__input"
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={password}
+          onChange={handlePasswordInput}
+          required
+        />
+      </label>
     </ModalWithForm>
   );
 };

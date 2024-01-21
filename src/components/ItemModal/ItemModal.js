@@ -10,7 +10,7 @@ const ItemModal = ({ selectedCard, onClose, handleDeleteCard }) => {
       ? `modal__item-delete-button_visible`
       : `modal__item-delete-button_hidden`
   }`;
-
+  console.log(selectedCard, currentUser);
   return (
     <div className={`modal`}>
       <div className="modal__content">
@@ -29,13 +29,15 @@ const ItemModal = ({ selectedCard, onClose, handleDeleteCard }) => {
           <div className="modal__item-weather">
             weather type: {selectedCard.weather}
           </div>
-          <button
-            className={deleteButtonClassName}
-            type=" button"
-            onClick={() => handleDeleteCard(selectedCard)}
-          >
-            Delete Item
-          </button>
+          {currentUser._id === selectedCard.owner && (
+            <button
+              className={deleteButtonClassName}
+              type=" button"
+              onClick={() => handleDeleteCard(selectedCard)}
+            >
+              Delete Item
+            </button>
+          )}
         </div>
       </div>
     </div>

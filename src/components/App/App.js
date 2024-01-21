@@ -100,8 +100,8 @@ function App() {
 
   const handleEditProfileSubmit = ({ name, avatar }) => {
     editProfile({ name, avatar })
-      .then(({ user }) => {
-        setCurrentUser(user);
+      .then(({ data }) => {
+        setCurrentUser(data);
         handleCloseModal();
       })
       .catch((err) => {
@@ -144,7 +144,7 @@ function App() {
 
   const onAddItem = (values) => {
     addItem(values)
-      .then((data) => {
+      .then(({ data }) => {
         setClothingItems([data, ...clothingItems]);
         handleCloseModal();
       })
@@ -277,6 +277,7 @@ function App() {
             <RegisterModal
               handleCloseModal={handleCloseModal}
               buttonText={"Next"}
+              secondaryButtonText={"or Login"}
               onSignUp={handleSignUp}
               onAltButton={handleOpenLoginModal}
             />
@@ -285,6 +286,7 @@ function App() {
             <LoginModal
               handleCloseModal={handleCloseModal}
               buttonText={"Login"}
+              secondaryButtonText={"or Register"}
               onLogin={handleLogin}
               onAltButton={handleOpenRegisterModal}
             />

@@ -35,8 +35,8 @@ const EditProfileModal = ({
       onSubmit={handleSubmit}
     >
       <div className="modal__form-content">
-        <label>
-          <p className="modal__input-title">Name</p>
+        <label className="modal__label">
+          Name*
           <input
             className="modal__input"
             type="text"
@@ -50,8 +50,8 @@ const EditProfileModal = ({
           />
         </label>
 
-        <label>
-          <p className="modal__input-title">Avatar</p>
+        <label className="modal__label">
+          Avatar
           <input
             className="modal__input"
             type="url"
