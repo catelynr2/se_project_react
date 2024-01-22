@@ -6,6 +6,7 @@ const RegisterModal = ({
   onSignUp,
   buttonText,
   secondaryButtonText,
+  onAltButton,
   isOpen,
 }) => {
   const [email, setEmail] = useState("");
@@ -46,6 +47,7 @@ const RegisterModal = ({
       isOpen={isOpen}
       buttonText={buttonText}
       secondaryButtonText={secondaryButtonText}
+      onAltButton={onAltButton}
       onSubmit={handleSubmit}
     >
       <label className="modal__label">

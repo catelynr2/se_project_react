@@ -7,6 +7,7 @@ const ModalWithForm = ({
   children,
   buttonText = "Add garment",
   secondaryButtonText,
+  onAltButton,
   isOpen,
   onSubmit,
 }) => {
@@ -24,7 +25,11 @@ const ModalWithForm = ({
           <button className="modal__submit-button" type="submit">
             {buttonText}
           </button>
-          <button className="modal__submit-button-additional" type="submit">
+          <button
+            className="modal__submit-button-additional"
+            type="button"
+            onClick={onAltButton}
+          >
             {secondaryButtonText}
           </button>
         </form>

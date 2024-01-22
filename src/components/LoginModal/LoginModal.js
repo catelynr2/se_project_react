@@ -6,6 +6,7 @@ const LoginModal = ({
   onLogin,
   buttonText,
   secondaryButtonText,
+  onAltButton,
   isOpen,
 }) => {
   const [email, setEmail] = useState("");
@@ -36,6 +37,7 @@ const LoginModal = ({
       onClose={handleCloseModal}
       buttonText={buttonText}
       secondaryButtonText={secondaryButtonText}
+      onAltButton={onAltButton}
       onSubmit={handleSubmit}
     >
       <label className="modal__label">

@@ -29,7 +29,7 @@ function ClothesSection({
         </button>
       </div>
       <div className="clothing__section-cards">
-        {clothingItems.map((item) => {
+        {currentItems.map((item) => {
           return (
             <ItemCard
               key={item?._id ?? item?.id}
