@@ -6,7 +6,13 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useContext } from "react";
 
-const Header = ({ onCreateModal, onSignUp, onLogin, loggedIn }) => {
+const Header = ({
+  onCreateModal,
+  onSignUp,
+  onLogin,
+  loggedIn,
+  userLocation,
+}) => {
   console.log("Header");
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
@@ -25,7 +31,9 @@ const Header = ({ onCreateModal, onSignUp, onLogin, loggedIn }) => {
             <img src={logo} className="App-logo" alt="logo" />
           </Link>
         </div>
-        <div className="header__date-location">{currentDate}, Florida</div>
+        <div className="header__date-location">
+          {currentDate}, {userLocation}
+        </div>
       </div>
       <div className="header__menu-right">
         <ToggleSwitch />
