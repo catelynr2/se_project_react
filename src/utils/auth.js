@@ -1,7 +1,7 @@
 import { checkResponse } from "./Api";
 const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https://github.com/catelynr2/se_project_express.git"
+    ? "deployed-backend-url"
     : "http://localhost:3001";
 
 export const signup = ({ name, avatar, email, password }) => {
