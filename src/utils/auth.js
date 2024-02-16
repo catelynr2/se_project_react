@@ -1,7 +1,7 @@
 import { checkResponse } from "./Api";
 const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "deployed-backend-url"
+    ? "https://api.wtwrcatelynrichard.ignorelist.com"
     : "http://localhost:3001";
 
 export const signup = ({ name, avatar, email, password }) => {
