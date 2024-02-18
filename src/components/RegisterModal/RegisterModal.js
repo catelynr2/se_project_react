@@ -10,12 +10,32 @@ const RegisterModal = ({
   isOpen,
 }) => {
   const [email, setEmail] = useState("");
+  const [formErrors, setFormErrors] = useState({
+    email: "Invalid Email",
+    password: "Password length needs to be 8 characters",
+  });
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
+    const validateEmail = (enteredEmail) => {
+      // emailRegex = regular expression
+      // const isValid = emailRegex.test(enteredEmail)
+      // return isValid
+    };
+    // if e.target.name = "email" {
+    // const emailIsValid = validateEmail(e.target.value)
+    // setFormErrors({...formErrors, email: emailIsValid ? "" : "Invalid Email"});
+    // }
   };
   const [password, setPassword] = useState("");
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
+    // const validatePassword = (enteredPassword) => {
+    // password.length < 8 ? return false : return true;
+    // }
+    // if e.target.name = "password" {
+    // const passwordIsValid = validatePassword(e.target.value)
+    // setFormErrors({...formErorrs, password: passwordIsValid ? "" : "Password length needs to be 8 characters"})
+    // }
   };
   const [name, setName] = useState("");
   const handleNameChange = (e) => {

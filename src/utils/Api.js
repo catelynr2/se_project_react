@@ -1,7 +1,5 @@
 const baseUrl =
-  process.env.NODE_ENV === "production"
-    ? "deployed-backend-url"
-    : "http://localhost:3001";
+  process.env.NODE_ENV === "production" ? "" : "http://localhost:3001";
 
 export const checkResponse = (res) => {
   if (res.ok) {
